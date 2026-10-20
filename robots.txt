@@ -1,2 +1,25 @@
+# Preview: crawlers allowed by rule; every page still carries <meta name="robots" content="noindex,nofollow">.
+# At launch on johnzialcita.com: remove the noindex meta tags and keep these rules.
 User-agent: *
-Disallow: /
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+User-agent: Bingbot
+Allow: /
+
+Sitemap: https://johnzialcita.com/sitemap.xml
