@@ -189,3 +189,9 @@ a.btn{color:var(--ink)!important}a.btn.ghost,a.btn.dark{color:#fff!important}
 body.no-hero header .hd{background:rgba(10,22,38,.94)}
 body.no-hero main .btn.ghost{background:var(--ink);border-color:var(--ink)}
 .ehl{height:auto}
+
+.lfbar{background:#fff;display:flex;align-items:center;justify-content:center;gap:18px;padding:7px 14px;border-bottom:2px solid var(--gold2);font:600 12px/1.2 Inter,sans-serif;color:#0a1626;letter-spacing:.04em}
+.lflogo{display:flex}.lflogo img{height:18px;width:auto;display:block}.lfbar i{color:#c9a25a;font-style:normal;padding:0 4px}
+@media(min-width:960px){.hero{padding-top:154px!important}}
+@media(max-width:959px){.hero{padding-top:286px}}
+@media(max-width:600px){.lfbar{flex-direction:column;gap:4px;padding:6px 10px;font-size:10.5px}.lflogo img{height:15px}.hero{padding-top:300px}}
