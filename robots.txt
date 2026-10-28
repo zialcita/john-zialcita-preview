@@ -1,4 +1,5 @@
 # Live on johnzialcita.com: all crawlers allowed.
+User-agent: *
 Allow: /
 
 User-agent: GPTBot
