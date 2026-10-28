@@ -1,6 +1,4 @@
-# Preview: crawlers allowed by rule; every page still carries <meta name="robots" content="noindex,nofollow">.
-# At launch on johnzialcita.com: remove the noindex meta tags and keep these rules.
-User-agent: *
+# Live on johnzialcita.com: all crawlers allowed.
 Allow: /
 
 User-agent: GPTBot
