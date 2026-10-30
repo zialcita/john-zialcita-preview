@@ -199,4 +199,4 @@ body.no-hero main .btn.ghost{background:var(--ink);border-color:var(--ink)}
 .rate-fallback{display:none;padding:14px}.widget-failed .rate-fallback{display:block}.widget-failed{min-height:0!important}
 .widget-failed [data-ui-widget]{display:none}.rf-btns{display:flex;flex-wrap:wrap;gap:10px}
 #book-placeholder{min-height:0}
-.rv blockquote,.card blockquote{margin:8px 0;font-style:italic;line-height:1.5}
+.rv blockquote,.card blockquote{margin:8px 0;font-style:italic;line-height:1.5;font-size:17px}
