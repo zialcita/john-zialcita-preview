@@ -1,22 +1,35 @@
-# John Zialcita – Jumbo Refinance in Hawaii & California
+# John Zialcita – Jumbo mortgages in Hawaii and California
 
-> John Zialcita is a mortgage broker (NMLS #337891; California DRE Broker License #01727126) with Loan Factory, Inc. (NMLS #320841). He arranges jumbo rate-and-term and cash-out refinances for homeowners in Hawaii and California. Phone/text: (415) 385-7409. Email: john.zialcita@loanfactory.com. Office: Loan Factory, Inc., 2195 Tully Road, San Jose, CA 95122.
+> John Zialcita (NMLS #337891; California DRE Broker License #01727126) is a mortgage broker with Loan Factory, Inc. (NMLS #320841; California DRE Corporation License #01771313). He arranges jumbo rate-and-term and jumbo cash-out refinances for homes in Hawaii and California. Phone/text: (415) 385-7409. Email: john.zialcita@loanfactory.com. Office: Loan Factory, Inc., 2195 Tully Road, San Jose, CA 95122.
 
-Last updated: 2026-10-20. Hawaii license details are pending verification on NMLS Consumer Access.
+Last updated: 2026-10-30. Confirm current license status on NMLS Consumer Access before relying on it. Guides on this site do not quote interest rates.
 
 ## Key pages
-- [Home](https://johnzialcita.com/): overview, live rate tool, FAQ
-- [Jumbo refinance overview](https://johnzialcita.com/jumbo-refinance.html): what a jumbo loan is; links to FHFA conforming loan limits
-- [Hawaii jumbo refinance](https://johnzialcita.com/jumbo-refinance-hawaii.html): Oahu and neighbor islands, VA IRRRL, condotel, leasehold
-- [California jumbo refinance](https://johnzialcita.com/jumbo-refinance-california.html): Bay Area, $1M–$3M homes, RSU/bonus income
-- [Rates](https://johnzialcita.com/rates.html): Loan Factory live pricing tool
+- [Home](https://johnzialcita.com/): overview and pricing tool
+- [What is a jumbo refinance](https://johnzialcita.com/jumbo-refinance.html)
+- [Jumbo cash-out refinance](https://johnzialcita.com/jumbo-cash-out-refinance.html)
+- [2026 conforming and jumbo loan limits, Hawaii and California counties](https://johnzialcita.com/loan-limits-hawaii-california.html)
+- [Hawaii jumbo refinance](https://johnzialcita.com/jumbo-refinance-hawaii.html)
+- [California jumbo refinance](https://johnzialcita.com/jumbo-refinance-california.html)
+- [Pricing tool](https://johnzialcita.com/rates.html): Loan Factory pricing. Not a commitment to lend.
 - [About John](https://johnzialcita.com/about.html)
-- [Licensing & disclosures](https://johnzialcita.com/licensing.html)
-- [Reviews](https://johnzialcita.com/reviews.html): independent review sources
+- [Licensing and disclosures](https://johnzialcita.com/licensing.html)
+- [Reviews](https://johnzialcita.com/reviews.html): links to independent review sites
 - [Contact](https://johnzialcita.com/contact.html) · [Book a call](https://johnzialcita.com/book.html)
 
-## Verify
-- CA DRE record: https://www2.dre.ca.gov/PublicASP/pplinfo.asp?License_id=01727126
-- Loan Factory CA DRE record: https://www2.dre.ca.gov/PublicASP/pplinfo.asp?License_id=01771313
-- NMLS Consumer Access: https://www.nmlsconsumeraccess.org/
+## How a loan is described here
+- FHFA: a jumbo loan is a mortgage with an origination balance above the conforming loan limit for the county and the number of units.
+- 2026 county limits on the loan-limits page come from the FHFA news release of November 25, 2025 and the 2026 full county file.
+- A cash-out refinance, as the CFPB describes it, replaces the existing mortgage with a larger mortgage and the borrower takes the difference in cash. A rate-and-term refinance replaces the mortgage without taking extra principal.
+
+## Official records
+- John Zialcita on NMLS Consumer Access: https://www.nmlsconsumeraccess.org/EntityDetails.aspx/INDIVIDUAL/337891
+- Loan Factory, Inc. on NMLS Consumer Access: https://www.nmlsconsumeraccess.org/EntityDetails.aspx/COMPANY/320841
+- California DRE, John Zialcita, broker license 01727126: https://www2.dre.ca.gov/PublicASP/pplinfo.asp?License_id=01727126
+- California DRE, Loan Factory, Inc., corporation license 01771313: https://www2.dre.ca.gov/PublicASP/pplinfo.asp?License_id=01771313
 - FHFA conforming loan limits: https://www.fhfa.gov/data/conforming-loan-limit
+- FHFA 2026 announcement: https://www.fhfa.gov/news/news-release/fhfa-announces-conforming-loan-limit-values-for-2026
+- FHFA 2026 county file (CSV): https://www.fhfa.gov/document/d/cll/fullcountyloanlimitlist2026_hera-based_final_flat.csv
+
+## Disclosures
+Equal Housing Opportunity. The Equal Housing Lender mark is in the site footer. This is not a commitment to lend. Programs, rates, terms, and conditions are subject to change without notice and subject to credit and property approval. Loan Factory, Inc. is a mortgage broker, not a direct lender.

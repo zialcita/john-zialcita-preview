@@ -200,3 +200,15 @@ body.no-hero main .btn.ghost{background:var(--ink);border-color:var(--ink)}
 .widget-failed [data-ui-widget]{display:none}.rf-btns{display:flex;flex-wrap:wrap;gap:10px}
 #book-placeholder{min-height:0}
 .rv blockquote,.card blockquote{margin:8px 0;font-style:italic;line-height:1.5;font-size:17px}
+.crumbs{font-size:13.5px;margin:0 0 14px}.crumbs ol{display:flex;flex-wrap:wrap;gap:6px 8px;list-style:none;margin:0;padding:0}.crumbs li{display:inline-flex;align-items:center;gap:8px}.crumbs li+li:before{content:"/";opacity:.65}
+.phero .crumbs,.phero .crumbs a{color:#e3c98f}.no-hero .crumbs a{color:#22605d}.no-hero .crumbs{color:var(--muted)}
+.byline{margin:8px 0 0;font-size:14.5px;color:#d5e0ea}.no-hero .byline{color:var(--muted)}
+.prose{max-width:800px}.prose h2{margin-top:34px}.prose .answer{font-size:18px;margin:0 0 8px}
+.table-scroll{overflow-x:auto;border:1px solid #efe6d8;border-radius:18px;background:#fff}
+table.limits{width:100%;border-collapse:collapse;font-size:14.5px}table.limits caption{caption-side:bottom;text-align:left;padding:10px 12px;color:var(--muted);font-size:13px}
+table.limits th,table.limits td{padding:10px 12px;border-bottom:1px solid #efe6d8;text-align:left}table.limits th{background:#0f2238;color:#fff;font-weight:600}
+table.limits td.num,table.limits th.num{text-align:right;font-variant-numeric:tabular-nums}table.limits tr:last-child td{border-bottom:0}
+table.limits td:first-child,table.limits th:first-child{white-space:normal}
+.county-list{columns:2;padding-left:18px;margin:8px 0 0}.county-list li{break-inside:avoid;margin:2px 0}
+@media(min-width:800px){.county-list{columns:3}}
+.sources{font-size:14.5px;color:var(--muted)}
