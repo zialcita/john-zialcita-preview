@@ -54,7 +54,8 @@ nav{display:none;gap:4px}nav a{color:#e6edf4;text-decoration:none;font-size:14px
 .step .n{font-family:Fraunces,serif;font-size:64px;line-height:1;background:linear-gradient(135deg,var(--gold2),var(--teal2));-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:10px}
 .step p{color:#b9c7d6;margin:0}
 /* about */
-.portrait{position:relative}.portrait img{border-radius:28px;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;box-shadow:var(--shadow)}
+.portrait{position:relative}.portrait img{border-radius:28px;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;box-shadow:var(--shadow)}
+.about-photo{width:100%;height:auto;max-width:100%;aspect-ratio:5/4;object-fit:cover;object-position:center;border-radius:28px;align-self:start;box-shadow:var(--shadow)}
 .portrait:after{content:"";position:absolute;inset:auto -16px -16px auto;width:60%;height:60%;border:1px solid var(--gold);border-radius:28px;z-index:-1}
 .sig{font-family:Fraunces,serif;font-style:italic;font-size:34px;color:var(--gold);margin-top:10px}
 blockquote{font-family:Fraunces,serif;font-size:24px;line-height:1.4;color:var(--ink);margin:0 0 18px;font-style:italic}
