@@ -195,3 +195,7 @@ body.no-hero main .btn.ghost{background:var(--ink);border-color:var(--ink)}
 @media(min-width:960px){.hero{padding-top:154px!important}}
 @media(max-width:959px){.hero{padding-top:286px}}
 @media(max-width:600px){.lfbar{flex-direction:column;gap:4px;padding:6px 10px;font-size:10.5px}.lflogo img{height:15px}.hero{padding-top:300px}}
+.verify{display:none!important}
+.rate-fallback{display:none;padding:14px}.widget-failed .rate-fallback{display:block}.widget-failed{min-height:0!important}
+.widget-failed [data-ui-widget]{display:none}.rf-btns{display:flex;flex-wrap:wrap;gap:10px}
+#book-placeholder{min-height:0}
