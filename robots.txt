@@ -1,6 +1,7 @@
 # Live on johnzialcita.com: all crawlers allowed.
 User-agent: *
 Allow: /
+Disallow: /sso/
 
 User-agent: GPTBot
 Allow: /
