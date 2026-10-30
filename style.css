@@ -62,6 +62,22 @@ nav{display:none;gap:4px}nav a{color:#e6edf4;text-decoration:none;font-size:14px
 .quote-modal-close{position:absolute;top:8px;right:10px;border:0;background:transparent;font-size:32px;line-height:1;cursor:pointer;color:var(--ink);min-width:44px;min-height:44px}
 body.quote-open{overflow:hidden}
 .quote-modal .widget-wrap{min-height:0;box-shadow:none;border:0;padding:0}
+.soc{color:#e3c98f;text-decoration:none;font-size:13px;font-weight:600;margin-right:10px;white-space:nowrap}
+.rev-sum{display:grid;gap:14px;margin:18px 0 12px}
+@media(min-width:800px){.rev-sum{grid-template-columns:repeat(3,1fr)}}
+.rev-filters{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 18px}
+.rev-filters button{border:1px solid #e4d7c4;background:#fff;border-radius:999px;padding:8px 14px;font:600 14px Inter,sans-serif;cursor:pointer;min-height:40px}
+.rev-filters button[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.rev-grid{display:grid;gap:16px}
+@media(min-width:860px){.rev-grid{grid-template-columns:1fr 1fr}}
+.rev-card{background:#fff;border:1px solid #efe6d8;border-radius:18px;padding:18px}
+.rev-card blockquote{font-size:16.5px;line-height:1.45;margin:8px 0}
+.rev-card.is-clamp blockquote{display:-webkit-box;-webkit-line-clamp:7;-webkit-box-orient:vertical;overflow:hidden}
+.rev-meta{font-size:13.5px;color:var(--muted);margin:0}
+.rev-top{display:flex;justify-content:space-between;gap:10px;align-items:center}
+.badge{display:inline-flex;align-items:center;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--ink);border:1px solid #e3c98f;border-radius:999px;padding:4px 10px}
+.rev-toggle{background:none;border:0;color:#22605d;font-weight:700;padding:4px 0;cursor:pointer;min-height:40px}
+.prev-rev{margin-top:12px;padding-top:10px;border-top:1px solid #efe6d8}
 .portrait:after{content:"";position:absolute;inset:auto -16px -16px auto;width:60%;height:60%;border:1px solid var(--gold);border-radius:28px;z-index:-1}
 .sig{font-family:Fraunces,serif;font-style:italic;font-size:34px;color:var(--gold);margin-top:10px}
 blockquote{font-family:Fraunces,serif;font-size:24px;line-height:1.4;color:var(--ink);margin:0 0 18px;font-style:italic}
@@ -219,3 +235,8 @@ table.limits td:first-child,table.limits th:first-child{white-space:normal}
 .county-list{columns:2;padding-left:18px;margin:8px 0 0}.county-list li{break-inside:avoid;margin:2px 0}
 @media(min-width:800px){.county-list{columns:3}}
 .sources{font-size:14.5px;color:var(--muted)}
+
+.soc-hd{display:none;color:#e3c98f;text-decoration:none;font-size:13px;font-weight:600;padding:8px 8px;white-space:nowrap}
+@media(min-width:960px){.soc-hd{display:inline-flex;align-items:center}}
+.soc-row{margin:8px 0 0}
+.rev-card blockquote{white-space:pre-wrap}
