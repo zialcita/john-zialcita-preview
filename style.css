@@ -56,6 +56,12 @@ nav{display:none;gap:4px}nav a{color:#e6edf4;text-decoration:none;font-size:14px
 /* about */
 .portrait{position:relative}.portrait img{border-radius:28px;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%;box-shadow:var(--shadow)}
 .about-photo{width:100%;height:auto;max-width:100%;aspect-ratio:5/4;object-fit:cover;object-position:center;border-radius:28px;align-self:start;box-shadow:var(--shadow)}
+.quote-modal{position:fixed;inset:0;z-index:80;display:none;align-items:flex-start;justify-content:center;padding:18px 12px 28px;overflow:auto;background:rgba(7,16,29,.72)}
+.quote-modal.open{display:flex}
+.quote-modal-panel{background:#fff;color:var(--text);width:min(720px,100%);border-radius:22px;padding:42px 16px 16px;position:relative;margin:28px auto 12px;box-shadow:var(--shadow)}
+.quote-modal-close{position:absolute;top:8px;right:10px;border:0;background:transparent;font-size:32px;line-height:1;cursor:pointer;color:var(--ink);min-width:44px;min-height:44px}
+body.quote-open{overflow:hidden}
+.quote-modal .widget-wrap{min-height:0;box-shadow:none;border:0;padding:0}
 .portrait:after{content:"";position:absolute;inset:auto -16px -16px auto;width:60%;height:60%;border:1px solid var(--gold);border-radius:28px;z-index:-1}
 .sig{font-family:Fraunces,serif;font-style:italic;font-size:34px;color:var(--gold);margin-top:10px}
 blockquote{font-family:Fraunces,serif;font-size:24px;line-height:1.4;color:var(--ink);margin:0 0 18px;font-style:italic}

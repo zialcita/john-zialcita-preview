@@ -16,6 +16,7 @@ Last updated: 2026-10-30. Confirm current license status on NMLS Consumer Access
 - [Licensing and disclosures](https://johnzialcita.com/licensing.html)
 - [Reviews](https://johnzialcita.com/reviews.html): links to independent review sites
 - [Contact](https://johnzialcita.com/contact.html) · [Book a call](https://johnzialcita.com/book.html)
+- [Privacy](https://johnzialcita.com/privacy.html) · [SMS terms](https://johnzialcita.com/sms-terms.html)
 
 ## How a loan is described here
 - FHFA: a jumbo loan is a mortgage with an origination balance above the conforming loan limit for the county and the number of units.
