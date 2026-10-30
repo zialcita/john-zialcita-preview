@@ -1,7 +1,7 @@
 /* Site analytics for johnzialcita.com.
    Paste the real IDs here (one place). Leave '' to keep tracking off.
    GA4 property + GTM container belong to John's Google account (yourtrustedmortgagepro@gmail.com). */
-window.JZ_ANALYTICS = { GA_ID: '', GTM_ID: '' };
+window.JZ_ANALYTICS = { GA_ID: 'G-9M3HLW882J', GTM_ID: '' };
 (function(){
   var C = window.JZ_ANALYTICS; window.dataLayer = window.dataLayer || [];
   function gtag(){ dataLayer.push(arguments); } window.gtag = window.gtag || gtag;
