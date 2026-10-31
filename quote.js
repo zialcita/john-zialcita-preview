@@ -1,4 +1,6 @@
 (function () {
+  if (window.__jzQuoteInit) return;
+  window.__jzQuoteInit = true;
   var SRC = "https://www.loanfactory.com/sdk.js?owner=jzialcita@yourmortgageteam.net";
   var started = false;
   var ready = false;
@@ -50,6 +52,7 @@
   function finish() {
     ready = true;
     var root = document.getElementById("lf-mount");
+    if (root) root.classList.add("lf-ready");
     if (root) watch(root);
     waiters.splice(0).forEach(function (fn) { fn(); });
   }
@@ -59,6 +62,7 @@
     if (ready) { finish(); return; }
     if (started) return;
     started = true;
+    if (document.querySelector('script[src^="https://www.loanfactory.com/sdk.js"]')) { finish(); return; }
     var script = document.createElement("script");
     script.src = SRC;
     script.async = true;
