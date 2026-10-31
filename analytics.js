@@ -27,6 +27,7 @@ window.JZ_ANALYTICS = { GA_ID: 'G-9M3HLW882J', GTM_ID: '' };
     else if (h.indexOf('sms:') === 0) track('click_to_text', {link_text: label});
     else if (h.indexOf('mailto:') === 0) track('click_email', {link_text: label});
     else if (/(^|\/)book\.html/.test(h)) track('book_click', {link_text: label});
+    else if (a.hostname === 'calendar.app.google') track('book_consultation', {link_url: a.href});
     else if (a.hostname && a.hostname !== location.hostname) {
       track(/loanfactory\.com$/.test(a.hostname) ? 'rates_outbound_click' : 'outbound_click', {link_url: a.href, link_text: label});
     }
