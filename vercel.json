@@ -1,11 +1,92 @@
 {
+  "redirects": [
+    {
+      "source": "/about",
+      "destination": "/about.html",
+      "permanent": true
+    },
+    {
+      "source": "/book",
+      "destination": "/book.html",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/rates",
+      "destination": "/rates.html",
+      "permanent": true
+    },
+    {
+      "source": "/reviews",
+      "destination": "/reviews.html",
+      "permanent": true
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privacy.html",
+      "permanent": true
+    },
+    {
+      "source": "/licensing",
+      "destination": "/licensing.html",
+      "permanent": true
+    },
+    {
+      "source": "/sms-terms",
+      "destination": "/sms-terms.html",
+      "permanent": true
+    },
+    {
+      "source": "/jumbo-refinance",
+      "destination": "/jumbo-refinance.html",
+      "permanent": true
+    },
+    {
+      "source": "/jumbo-cash-out-refinance",
+      "destination": "/jumbo-cash-out-refinance.html",
+      "permanent": true
+    },
+    {
+      "source": "/jumbo-refinance-hawaii",
+      "destination": "/jumbo-refinance-hawaii.html",
+      "permanent": true
+    },
+    {
+      "source": "/jumbo-refinance-california",
+      "destination": "/jumbo-refinance-california.html",
+      "permanent": true
+    },
+    {
+      "source": "/loan-limits-hawaii-california",
+      "destination": "/loan-limits-hawaii-california.html",
+      "permanent": true
+    },
+    {
+      "source": "/index",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/sso/handoff",
       "headers": [
-        { "key": "Content-Type", "value": "application/json; charset=utf-8" },
-        { "key": "Cache-Control", "value": "no-store" },
-        { "key": "X-Robots-Tag", "value": "noindex" }
+        {
+          "key": "Content-Type",
+          "value": "application/json; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "no-store"
+        },
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex"
+        }
       ]
     }
   ]
