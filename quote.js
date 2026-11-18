@@ -104,6 +104,10 @@
 
   function openQuote(event) {
     if (event) event.preventDefault();
+    if (window.jzTrack) {
+      var opener = event && event.target && event.target.closest ? event.target.closest("a[data-quote-popup]") : null;
+      window.jzTrack("rate_quote_start", { quote_trigger: "popup", widget: "lf_quote_small", link_text: opener ? (opener.textContent || "").trim().replace(/\s+/g, " ").slice(0, 60) : "" });
+    }
     park(true);
     if (modal) {
       modal.hidden = false;
