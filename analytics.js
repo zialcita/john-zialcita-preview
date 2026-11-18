@@ -94,12 +94,20 @@ window.JZ_ANALYTICS = { GA_ID: 'G-9M3HLW882J', GTM_ID: '', HOSTS: ['johnzialcita
   /* Loan Factory rate widget: if it hasn't rendered (it is CORS-blocked off loanfactory.com), show a fallback. */
   window.addEventListener('load', function(){
     setTimeout(function(){
-      document.querySelectorAll('.widget-wrap').forEach(function(w){
+      function widgetHeight(w){
         var h = 0; Array.prototype.forEach.call(w.children, function(c){ if (!c.classList.contains('fine') && !c.classList.contains('rate-fallback')) h += c.offsetHeight; });
-        if (h < 80) {
+        return h;
+      }
+      document.querySelectorAll('.widget-wrap').forEach(function(w){
+        if (widgetHeight(w) < 80) {
           w.classList.add('widget-failed');
-          /* Only count it when the visitor can see that rate tool (skip the closed popup slot on every page). */
-          if (w.offsetParent !== null) track('rates_widget_fallback', {widget_slot: w.id || ''});
+          /* Only count it when the visitor can see that rate tool (skip the closed popup slot on every page),
+             and only if the widget still has not rendered a few seconds later (it can be slow on first open). */
+          setTimeout(function(){
+            var lf = w.querySelector('#lf-mount');
+            var rendered = lf && lf.querySelector('[role="form"], #gwt-debug-submit');
+            if (w.offsetParent !== null && !rendered) track('rates_widget_fallback', {widget_slot: w.id || ''});
+          }, 4000);
         }
       });
     }, 6000);
