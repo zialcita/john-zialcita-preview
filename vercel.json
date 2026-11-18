@@ -236,24 +236,6 @@
           "value": "noindex, nofollow"
         }
       ]
-    },
-    {
-      "source": "/compass-buyer-mortgage-advantage",
-      "headers": [
-        {
-          "key": "X-Robots-Tag",
-          "value": "noindex, nofollow"
-        }
-      ]
-    },
-    {
-      "source": "/compass-buyer-mortgage-advantage/",
-      "headers": [
-        {
-          "key": "X-Robots-Tag",
-          "value": "noindex, nofollow"
-        }
-      ]
     }
   ]
 }
