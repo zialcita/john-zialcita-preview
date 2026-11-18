@@ -96,7 +96,11 @@ window.JZ_ANALYTICS = { GA_ID: 'G-9M3HLW882J', GTM_ID: '', HOSTS: ['johnzialcita
     setTimeout(function(){
       document.querySelectorAll('.widget-wrap').forEach(function(w){
         var h = 0; Array.prototype.forEach.call(w.children, function(c){ if (!c.classList.contains('fine') && !c.classList.contains('rate-fallback')) h += c.offsetHeight; });
-        if (h < 80) { w.classList.add('widget-failed'); track('rates_widget_fallback'); }
+        if (h < 80) {
+          w.classList.add('widget-failed');
+          /* Only count it when the visitor can see that rate tool (skip the closed popup slot on every page). */
+          if (w.offsetParent !== null) track('rates_widget_fallback', {widget_slot: w.id || ''});
+        }
       });
     }, 6000);
   });
