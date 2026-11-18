@@ -69,6 +69,46 @@
       "source": "/index",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/hawaii-mortgage-refinance",
+      "destination": "/jumbo-refinance-hawaii.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/hawaii-mortgage-refinance/",
+      "destination": "/jumbo-refinance-hawaii.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/california-mortgage-refinance",
+      "destination": "/jumbo-refinance-california.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/california-mortgage-refinance/",
+      "destination": "/jumbo-refinance-california.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/hawaii-home-loans-1m-3m",
+      "destination": "/jumbo-refinance-hawaii.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/hawaii-home-loans-1m-3m/",
+      "destination": "/jumbo-refinance-hawaii.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/insights/jumbo-vs-conforming-bay-area",
+      "destination": "/loan-limits-hawaii-california.html",
+      "statusCode": 301
+    },
+    {
+      "source": "/insights/jumbo-vs-conforming-bay-area/",
+      "destination": "/loan-limits-hawaii-california.html",
+      "statusCode": 301
     }
   ],
   "headers": [
