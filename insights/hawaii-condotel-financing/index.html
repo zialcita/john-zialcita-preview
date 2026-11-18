@@ -12,7 +12,10 @@
 <link rel="stylesheet" href="/style.css">
 <link rel="preload" as="image" href="/img/hawaii.webp" fetchpriority="high">
 <style>
-.draft-banner{background:#fff3a3;color:var(--ink);border-bottom:2px solid var(--gold);padding:12px 22px;font-size:14.5px;position:relative;z-index:40;text-align:center}
+.draft-banner{background:#fff3a3;color:var(--ink);border-bottom:2px solid var(--gold);padding:10px 22px;font-size:14.5px;position:fixed;top:0;left:0;right:0;z-index:60;text-align:center}
+header{top:46px !important}
+.phero{padding-top:216px !important}
+@media (max-width:700px){.draft-banner{padding:8px 12px;font-size:13px;line-height:1.4}header{top:86px !important}.phero{padding-top:250px !important}}
 .draft-banner code{background:rgba(10,22,38,.08);padding:1px 5px;border-radius:4px}
 .john-confirm,.john-confirm mark{background:#fff3a3;border-left:4px solid var(--gold);padding:1px 8px 1px 8px;font-weight:600;color:var(--ink);box-decoration-break:clone;-webkit-box-decoration-break:clone}
 p .john-confirm,li .john-confirm{display:inline}
