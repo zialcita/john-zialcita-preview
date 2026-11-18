@@ -3,8 +3,10 @@
    GA4 property + GTM container belong to John's Google account (yourtrustedmortgagepro@gmail.com).
    Tracking only runs on the production hostnames (johnzialcita.com, www.johnzialcita.com) over https.
    Localhost, 127.0.0.1, ::1, file:, and *.vercel.app previews send nothing to GA4.
-   Add ?jz_debug=1 to any URL to send that session's hits with debug_mode (GA4 DebugView). */
-window.JZ_ANALYTICS = { GA_ID: 'G-9M3HLW882J', GTM_ID: '', HOSTS: ['johnzialcita.com', 'www.johnzialcita.com'] };
+   Add ?jz_debug=1 to any URL to send that session's hits with debug_mode (GA4 DebugView).
+   Meta Pixel (PIXEL_ID, "John Zialcita's Official Pixel") uses the same production-host filter.
+   For local testing only: http://localhost/...?jz_pixel_test=1 turns the Meta Pixel on (GA4 stays off). */
+window.JZ_ANALYTICS = { GA_ID: 'G-9M3HLW882J', GTM_ID: '', PIXEL_ID: '1235275005272091', HOSTS: ['johnzialcita.com', 'www.johnzialcita.com'] };
 (function(){
   var C = window.JZ_ANALYTICS; window.dataLayer = window.dataLayer || [];
   function gtag(){ dataLayer.push(arguments); } window.gtag = window.gtag || gtag;
@@ -24,8 +26,41 @@ window.JZ_ANALYTICS = { GA_ID: 'G-9M3HLW882J', GTM_ID: '', HOSTS: ['johnzialcita
     /* Default config keeps the full page URL, so utm_* query parameters reach GA4 untouched. */
     gtag('config', C.GA_ID, DEBUG ? {debug_mode: true} : {});
   }
+  /* Meta Pixel: base code + PageView, then the site events below mapped to Meta events.
+     No 'Lead' is sent: leads are completed on Loan Factory's site, not here. */
+  var PIXEL_TEST = false;
+  try { PIXEL_TEST = !LIVE && /^(localhost|127\.0\.0\.1)$/.test(location.hostname) && /[?&]jz_pixel_test=1(&|$)/.test(location.search); } catch (e) {}
+  var PIXEL_ON = !!C.PIXEL_ID && (LIVE || PIXEL_TEST);
+  function eid(n){ return n + '.' + Date.now() + '.' + Math.random().toString(36).slice(2, 10); }
+  if (PIXEL_ON) {
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    window.fbq('init', C.PIXEL_ID);
+    window.fbq('track', 'PageView', {}, {eventID: eid('PageView')});
+  }
+  var META = {
+    book_call_click: ['track', 'Schedule'],
+    rate_quote_start: ['trackCustom', 'RateQuoteStart'],
+    rate_quote_submit: ['trackCustom', 'RateQuoteSubmit'],
+    click_to_call: ['track', 'Contact', 'phone'],
+    click_to_text: ['track', 'Contact', 'sms'],
+    click_email: ['track', 'Contact', 'email']
+  };
+  function metaTrack(name, params){
+    var m = META[name]; if (!PIXEL_ON || !m || !window.fbq) return;
+    var data = {content_name: name, page_path: params.page_path};
+    if (params.cta_location) data.cta_location = params.cta_location;
+    if (params.quote_trigger) data.quote_trigger = params.quote_trigger;
+    if (params.quote_location) data.quote_location = params.quote_location;
+    if (m[2]) data.contact_method = m[2];
+    try { window.fbq(m[0], m[1], data, {eventID: eid(m[1])}); } catch (e) {}
+  }
   function track(name, params){
     params = params || {}; params.page_path = location.pathname;
+    metaTrack(name, params);
     if (!LIVE) return;
     if (C.GA_ID) gtag('event', name, Object.assign({transport_type: 'beacon'}, DEBUG ? {debug_mode: true} : {}, params));
     dataLayer.push(Object.assign({event: name}, params));
