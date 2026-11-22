@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://www.loanfactory.com"><link rel="preconnect" href="https://storage.googleapis.com"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap"></noscript>
-<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/prequal.css">
 <link rel="preload" as="image" href="/img/golden-gate.webp" fetchpriority="high">
 <style>
 .draft-banner{background:#fff3a3;color:var(--ink);border-bottom:2px solid var(--gold);padding:10px 22px;font-size:14.5px;position:fixed;top:0;left:0;right:0;z-index:60;text-align:center}
@@ -50,7 +50,7 @@ p .john-confirm,li .john-confirm{display:inline}
 <p>A general guide to how equity compensation and bonuses are often reviewed on a mortgage file. This is not a promise that RSU income will increase the amount you can borrow.</p>
 <p class="byline">By <a href="/about.html">John Zialcita</a>, NMLS #337891 · California DRE Broker License #01727126 · Hawaii License HI-337891</p>
 <p class="byline">Draft for review · November 17, 2026</p>
-<p><a class="btn" href="/rates.html" data-quote-popup="1" data-ev="cta_click">Get Quote</a><a class="btn ghost" href="https://calendar.app.google/2VznYYZbBozjzgraA" target="_blank" rel="noopener" data-ev="cta_click">Book a call</a></p>
+<p><a class="btn" href="/rates.html" data-quote-popup="1" data-prequal-entry="body" data-ev="cta_click">Check if you qualify </a><a class="btn ghost" href="https://calendar.app.google/2VznYYZbBozjzgraA" target="_blank" rel="noopener" data-ev="cta_click">Book a call</a></p>
 <p class="lic">NMLS #337891 · CA DRE #01727126 · Hawaii License HI-337891 · Loan Factory, Inc. NMLS #320841</p>
 </div></div>
 <section>
@@ -99,12 +99,12 @@ p .john-confirm,li .john-confirm{display:inline}
 <div id="quote-modal" class="quote-modal" hidden>
 <div class="quote-modal-panel" role="dialog" aria-modal="true" aria-labelledby="quote-modal-title">
 <button type="button" class="quote-modal-close" data-close-quote aria-label="Close quote form">&times;</button>
-<h2 id="quote-modal-title" style="color:var(--ink);font-size:28px;margin:0 0 8px">Get a quote</h2>
+<h2 id="quote-modal-title" style="color:var(--ink);font-size:28px;margin:0 0 8px">Check if you qualify</h2>
 <p class="fine" style="margin-top:0">Current mortgage scenarios from Loan Factory. Not a commitment to lend. <a href="/rates.html">Open the pricing page</a> if this form does not load.</p>
 <p class="fine consent">By submitting this form, or by texting (415) 385-7409, you agree to the <a href="/privacy.html">Privacy Policy</a> and <a href="/sms-terms.html">SMS Terms</a>. Message frequency varies. Msg &amp; data rates may apply. Reply STOP to opt out and HELP for help. Consent is not a condition of any loan.</p>
 <div class="widget-wrap" id="quote-modal-slot"><div id="lf-mount"><div data-ui-widget="quote_small" data-title="Current Mortgage rates" data-popup-result="1"></div></div></div>
 </div></div>
-<script src="/quote.js" defer></script>
+<script src="/quote.js" defer></script><script src="/prequal-config.js" defer></script><script src="/prequal.js" defer></script>
 <script>
 (function(){var h=document.querySelector('header');function f(){h.classList.toggle('solid',scrollY>40)}addEventListener('scroll',f,{passive:true});f();
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});

@@ -104,6 +104,10 @@
 
   function openQuote(event) {
     if (event) event.preventDefault();
+    if (window.jzTrack) {
+      var opener = event && event.target && event.target.closest ? event.target.closest("a[data-quote-popup]") : null;
+      window.jzTrack("rate_quote_start", { quote_trigger: "popup", widget: "lf_quote_small", link_text: opener ? (opener.textContent || "").trim().replace(/\s+/g, " ").slice(0, 60) : "" });
+    }
     park(true);
     if (modal) {
       modal.hidden = false;
@@ -123,9 +127,33 @@
     park(false);
   }
 
+  window.jzShowQuoteWidget = function (opts) {
+    opts = opts || {};
+    var node = mount();
+    var widget = node && node.querySelector('[data-ui-widget="quote_small"]');
+    if (widget && opts.leadInfoRequired != null) {
+      widget.setAttribute("data-lead-info-required", String(opts.leadInfoRequired));
+    }
+    if (node) {
+      node.hidden = false;
+      node.removeAttribute("hidden");
+    }
+    park(!!opts.modal);
+    if (window.jzTrack && !opts.silentStart) {
+      window.jzTrack("rate_quote_start", { quote_trigger: opts.trigger || "prequal_qualified", widget: "lf_quote_small" });
+    }
+    loadSdk();
+  };
+  window.jzCloseQuoteModal = closeQuote;
+
   document.addEventListener("click", function (event) {
     var opener = event.target.closest && event.target.closest("a[data-quote-popup]");
-    if (opener) { openQuote(event); return; }
+    if (opener) {
+      /* When the pre-qual flow is present, it owns these clicks. */
+      if (window.JZPrequal) return;
+      openQuote(event);
+      return;
+    }
     if (event.target.closest && event.target.closest("[data-close-quote]")) closeQuote();
   });
   document.addEventListener("keydown", function (event) {
@@ -135,7 +163,10 @@
     if (event.target === modal) closeQuote();
   });
 
-  var seen = inlineHost && document.getElementById("lf-mount");
+  /* Do not auto-load the Loan Factory widget when the pre-qual flow is on the page.
+     jzShowQuoteWidget() loads it after the visitor qualifies. */
+  var deferWidget = !!(document.getElementById("prequal-root") || document.querySelector("[data-prequal]"));
+  var seen = !deferWidget && inlineHost && document.getElementById("lf-mount");
   if (seen && "IntersectionObserver" in window) {
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {

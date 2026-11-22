@@ -1,0 +1,48 @@
+/* Pre-qualifying flow. Matches site tokens. Preview only. */
+.pq{--pq-pad:18px;max-width:640px;margin:0 auto}
+.pq-card{background:#fff;border:1px solid #efe6d8;border-radius:22px;box-shadow:var(--shadow);padding:22px 18px 20px}
+@media(min-width:640px){.pq-card{padding:28px 28px 24px}}
+.pq-kicker{display:inline-flex;align-items:center;gap:8px;text-transform:uppercase;letter-spacing:.16em;font-size:11px;font-weight:600;color:var(--gold);margin:0 0 8px}
+.pq-title{font-family:Fraunces,Georgia,serif;font-size:clamp(24px,4vw,32px);line-height:1.2;color:var(--ink);margin:0 0 10px}
+.pq-lead{margin:0 0 16px;color:var(--muted);font-size:16px}
+.pq-progress{margin:0 0 18px}
+.pq-progress-label{font-size:13px;font-weight:600;color:var(--muted);margin:0 0 6px}
+.pq-bar{height:6px;background:#efe6d8;border-radius:999px;overflow:hidden}
+.pq-bar>span{display:block;height:100%;width:0;background:linear-gradient(135deg,var(--gold2),var(--gold));border-radius:inherit;transition:width .25s ease}
+@media(prefers-reduced-motion:reduce){.pq-bar>span{transition:none}}
+.pq-options{display:grid;gap:10px;margin:0}
+.pq-opt{display:flex;align-items:center;justify-content:flex-start;text-align:left;width:100%;min-height:52px;padding:14px 16px;border:1px solid #e4d7c4;background:#fff;border-radius:14px;font:600 16px Inter,system-ui,sans-serif;color:var(--ink);cursor:pointer;line-height:1.3}
+.pq-opt:hover,.pq-opt:focus-visible{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,164,92,.28);outline:none}
+.pq-opt[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.pq-opt[aria-pressed="true"]:focus-visible{box-shadow:0 0 0 3px rgba(201,164,92,.45)}
+.pq-fieldset{border:0;margin:0 0 16px;padding:0}
+.pq-legend{font-weight:600;font-size:15px;color:var(--ink);margin:0 0 8px;padding:0}
+.pq-nav{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;align-items:center}
+.pq-back,.pq-next{min-height:48px;padding:12px 20px;border-radius:999px;font:600 15px Inter,system-ui,sans-serif;cursor:pointer}
+.pq-back{background:#fff;border:1px solid #e4d7c4;color:var(--ink)}
+.pq-back:hover,.pq-back:focus-visible,.pq-next:hover,.pq-next:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(201,164,92,.28)}
+.pq-next{border:0;background:linear-gradient(135deg,var(--gold2),var(--gold));color:var(--ink)}
+.pq-next:disabled{opacity:.45;cursor:not-allowed;box-shadow:none}
+.pq-contact{display:grid;gap:12px}
+.pq-field label{display:block;font-weight:600;font-size:14px;margin:0 0 4px;color:var(--ink)}
+.pq-field input,.pq-field select{width:100%;min-height:48px;padding:10px 12px;border:1px solid #e4d7c4;border-radius:12px;font:16px Inter,system-ui,sans-serif;background:#fff;color:var(--ink)}
+.pq-field input:focus-visible,.pq-field select:focus-visible{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,164,92,.28)}
+.pq-consent{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--muted);line-height:1.45}
+.pq-consent input{margin-top:4px;width:20px;height:20px;flex:none}
+.pq-hp{position:absolute;left:-9999px;height:0;overflow:hidden}
+.pq-error{color:#8a1f1f;font-size:14px;margin:8px 0 0}
+.pq-note{font-size:14px;color:var(--muted);margin:12px 0 0}
+.pq-reach{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.pq-reach a{min-height:44px}
+.pq-stub{background:#fff3a3;border:1px solid var(--gold);border-radius:12px;padding:10px 12px;font-size:14px;margin:0 0 14px;color:var(--ink)}
+.pq-limits{font-size:12.5px;color:var(--muted);margin:14px 0 0;line-height:1.45}
+#quote-inline.pq-pending #lf-mount{display:none}
+#quote-inline.pq-show-widget #prequal-root{margin-bottom:18px}
+#quote-inline.pq-show-widget #lf-mount{display:block}
+.quote-modal-panel.pq-wide{width:min(760px,100%)}
+.pq-live{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+
+.pq-title:focus,.pq-title:focus-visible{outline:none}
+.pq-reach .btn.ghost,.pq-card a.btn.ghost{background:var(--ink);color:#fff !important;border:1px solid var(--ink)}
+.quote-modal-panel.pq-prequal-open > p.fine,
+.quote-modal-panel.pq-prequal-open > h2{display:none}
