@@ -19,7 +19,8 @@
       { key: "watching", label: "Just watching rates" }
     ],
     amount: [
-      { key: "under_800k", label: "Under $800K" },
+      { key: "under_300k", label: "Under $300K" },
+      { key: "300k_800k", label: "$300K to $800K" },
       { key: "800k_125m", label: "$800K to $1.25M" },
       { key: "125m_3m", label: "$1.25M to $3M" },
       { key: "over_3m", label: "Over $3M" }
@@ -28,7 +29,8 @@
       { key: "740_plus", label: "740+" },
       { key: "700_739", label: "700-739" },
       { key: "660_699", label: "660-699" },
-      { key: "under_660", label: "Under 660" },
+      { key: "580_659", label: "580-659" },
+      { key: "under_580", label: "Under 580" },
       { key: "not_sure", label: "Not sure" }
     ],
     timelinePurchase: [
@@ -177,7 +179,7 @@
     var amount = s.answers.amount;
     var timeline = s.answers.timeline;
     if (isPurchase(s) && timeline === "6plus") return "nurture";
-    if (amount === (cfg().loanSizeDqBand || "under_800k")) return "conforming";
+    if (amount === (cfg().conformingAmountBand || "300k_800k")) return "conforming";
     return "jumbo";
   }
 
@@ -203,11 +205,11 @@
 
   function creditIsDq(key) {
     if (!key || key === "not_sure") return false;
-    return key === (cfg().creditCutoffBand || "under_660");
+    return key === (cfg().creditCutoffBand || "under_580");
   }
 
   function amountIsUnder(key) {
-    return key === (cfg().loanSizeDqBand || "under_800k");
+    return key === (cfg().loanSizeDqBand || "under_300k");
   }
 
   function routeAfter(s, name, key) {
@@ -597,17 +599,19 @@
       form.addEventListener("submit", function (e) { self.handleContact(e); });
       card.appendChild(form);
     } else if (s.step === "rate_alert") {
-      card.appendChild(el("p", { class: "pq-lead", text: "John will set up a free Loan Factory Rate Alert for your exact loan and contact you when a no-cost refinance would save you money. No rate promises. Alerts are not a lock or an approval." }));
+      card.appendChild(el("p", { class: "pq-lead", text: "After you get an online rate quote, use the Create a Rate Alert button on the rate table. That sends your alert into John's Loan Factory CRM. John can also set one up by hand if you leave your loan details here. Alerts are not a lock or an approval. No rate promises." }));
       var rform = el("form", { novalidate: "novalidate" });
       rform.appendChild(formFields(s, "rate_alert"));
       var navr = el("div", { class: "pq-nav" });
       if (s.history.length) navr.appendChild(el("button", { type: "button", class: "pq-back", text: "Back", onclick: function () { self.back(); } }));
-      navr.appendChild(el("button", { type: "submit", class: "pq-next", text: "Request a Rate Alert" }));
+      navr.appendChild(el("button", { type: "submit", class: "pq-next", text: "Ask John to set a Rate Alert" }));
       rform.appendChild(navr);
+      rform.appendChild(el("p", { class: "pq-note" }, [el("a", { href: "/rates.html", text: "Or get a rate quote first, then create your own alert on the rate table" })]));
       rform.addEventListener("submit", function (e) { self.handleRateAlert(e); });
       card.appendChild(rform);
     } else if (s.step === "rate_alert_done") {
-      card.appendChild(el("p", { class: "pq-lead", text: "On the live site, John would enter this scenario into Loan Factory's Rate Alert tool and reach out when the target makes sense. This preview did not send your details to him." }));
+      card.appendChild(el("p", { class: "pq-lead", text: "If you already have a rate quote, you can also create the alert yourself from the Create a Rate Alert button on the rate table. This preview did not send your details to John or create an alert in Loan Factory." }));
+      card.appendChild(el("p", {}, [el("a", { class: "btn", href: "/rates.html", text: "Get a rate quote" })]));
       card.appendChild(stubNote());
     } else if (s.step === "dq") {
       card.appendChild(this.dqCopy());
@@ -620,6 +624,9 @@
       if (seg !== "conforming" && seg !== "nurture") {
         var book = el("a", { class: "btn", href: cfg().bookingUrl || "https://calendar.app.google/2VznYYZbBozjzgraA", target: "_blank", rel: "noopener", text: "Book a call" });
         card.appendChild(el("p", {}, [book]));
+      }
+      if (isRefi(s)) {
+        card.appendChild(el("p", { class: "pq-note", text: "After you see today's scenarios, you can tap Create a Rate Alert on the rate table to be notified if a no-cost refinance later makes sense. That alert goes into John's Loan Factory CRM. This form does not create the alert automatically." }));
       }
       card.appendChild(stubNote());
     } else if (s.step === "stay_in_touch_done") {
@@ -664,8 +671,8 @@
       box.appendChild(el("p", {}, [back]));
     } else if (this.state.reason === "credit" || this.state.reason === "loan_size") {
       var msg = this.state.reason === "credit"
-        ? "John typically works with stronger credit profiles for the loans he arranges. You can call or text him with questions, or leave an email if you want him to stay in touch."
-        : "This loan amount may be below the jumbo scenarios John focuses on. You can call or text him with questions, or leave an email if you want him to stay in touch.";
+        ? "John typically works with credit scores of 580 or higher for the loans he arranges. You can call or text him with questions, or leave an email if you want him to stay in touch."
+        : "This loan amount is below the $300,000 minimum John is using for now. You can call or text him with questions, or leave an email if you want him to stay in touch.";
       box.appendChild(el("p", { class: "pq-lead", text: msg }));
       var form = el("form", { novalidate: "novalidate" });
       form.appendChild(formFields(this.state, "stay_in_touch"));

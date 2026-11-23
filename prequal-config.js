@@ -1,43 +1,57 @@
 /* John Zialcita pre-qual config (preview only).
-   OPEN QUESTIONS FOR JOHN: change the values in JZ_PREQUAL_CONFIG below.
-   This is the single place for the credit cutoff, under-limit policy, jumbo
-   threshold reference figures, and the Loan Factory widget contact setting.
+   Thresholds below were confirmed by John on Nov 23, 2026
+   (email, 7:46 AM HST). This is the single place for the credit
+   cutoff, under-limit policy, jumbo threshold reference figures,
+   and the Loan Factory widget contact setting.
 
    Loan-limit figures are 2026 FHFA values already published on
    /loan-limits-hawaii-california.html. They were checked October 30, 2026
    against the FHFA November 25, 2025 news release and the 2026 full county
    CSV. Do not invent figures. FHFA 2027 limits were not verified for this
    preview; recheck before any production use if FHFA has posted them.
+
+   Nothing on this branch goes to production without Martin's and John's
+   review. Loan Factory approved the existing website changes and use of
+   the website on Nov 23, 2026; that approval does not cover new ad copy.
+   Loan Factory compliance must review all ad copy before it is published.
 */
 window.JZ_PREQUAL_CONFIG = {
-  /* Band that counts as "under the jumbo cutoff" in this form.
-     The form asks for bands, not a county, so we cannot apply a precise
-     per-county jumbo test here. "Under $800K" is below the 2026 FHFA
-     baseline one-unit limit of $832,750 in every county. The $800K to $1.25M
-     band can be conforming or jumbo depending on the county (for example
-     Honolulu, Kauai, Hawaii County, and many Bay Area counties sit at the
-     $1,249,125 contiguous / Hawaii statutory baseline). */
-  loanSizeDqBand: "under_800k",
+  /* Band at or below this loan-size answer is under the $300k floor John
+     set on Nov 23. Those visitors get a polite stay-in-touch path, not a
+     dead end. John said the floor can be raised later if too many low-loan
+     leads come in. */
+  loanSizeDqBand: "under_300k",
+  minLoanAmount: 300000,
 
-  /* Default (a) in the spec: still qualified, tagged conforming, quote tool
-     only, no booking button. Set to "disqualify" if John wants under-limit
-     loans turned away (DQ reason loan_size). */
-  underLimitPolicy: "conforming_quote_only",
+  /* Amount band that is still qualified but tagged conforming: quote tool
+     only, no booking button. $300K to $800K sits under the 2026 FHFA
+     baseline one-unit limit of $832,750 in every county. The $800K to
+     $1.25M band can be conforming or jumbo depending on the county (for
+     example Honolulu, Kauai, Hawaii County, and many Bay Area counties
+     sit at the $1,249,125 contiguous / Hawaii statutory baseline). */
+  conformingAmountBand: "300k_800k",
 
-  /* Credit answers at or below this band are disqualified (reason: credit).
-     "Not sure" always continues. Jumbo minimums are often around 680-700;
-     John should confirm this cutoff. */
-  creditCutoffBand: "under_660",
+  /* Under the $300k floor: disqualify with a stay-in-touch path.
+     The older "conforming_quote_only" policy now applies to
+     conformingAmountBand instead. */
+  underLimitPolicy: "disqualify",
+
+  /* Credit answers at or below this band are disqualified (reason: credit)
+     and offered a stay-in-touch path. "Not sure" always continues.
+     John set the minimum credit score at 580 on Nov 23, 2026. */
+  creditCutoffBand: "under_580",
+  minCreditScore: 580,
 
   /* "1" asks for contact inside the Loan Factory widget as well (recommended
      because John works from the Loan Factory CRM). "0" skips that second
-     form, which is what elitejumborates.com does. John picks. */
+     form, which is what elitejumborates.com does. Still the recommended
+     default; John has not changed it. */
   widgetLeadInfoRequired: "1",
 
-  /* Optional link on the out-of-state screen to loanfactory.com. Off until
-     John says it is okay to point people to colleagues. */
-  showOutOfStateLoanFactoryLink: false,
-  outOfStateLoanFactoryUrl: "https://www.loanfactory.com/",
+  /* John, Nov 23: out-of-state people should be directed to the main
+     Loan Factory website/team. Official directory is /find-loan-officers. */
+  showOutOfStateLoanFactoryLink: true,
+  outOfStateLoanFactoryUrl: "https://www.loanfactory.com/find-loan-officers",
 
   bookingUrl: "https://calendar.app.google/2VznYYZbBozjzgraA",
   phone: "(415) 385-7409",
